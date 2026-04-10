@@ -60,9 +60,9 @@ function Hero({ onGenerate }) {
         <p className="hero-subtitle">
           The Ultimate AI Learning Architect
         </p>
-        
+
         <div className="omni-input-wrapper">
-          <div 
+          <div
             className={`omni-input-container ${isDragging ? 'dragging' : ''}`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -76,7 +76,7 @@ function Hero({ onGenerate }) {
               onKeyPress={handleKeyPress}
               rows={3}
             />
-            
+
             <div className="input-actions">
               <label className={`file-upload-btn ${selectedFile ? 'has-file' : ''}`}>
                 <input
@@ -90,14 +90,14 @@ function Hero({ onGenerate }) {
                   {selectedFile ? selectedFile.name : 'Attach a file (optional)'}
                 </span>
               </label>
-              
+
               {selectedFile && (
                 <button className="clear-file-btn" onClick={clearFile}>
                   ×
                 </button>
               )}
-              
-              <button 
+
+              <button
                 className="generate-btn"
                 onClick={handleSubmit}
                 disabled={!inputValue.trim()}
