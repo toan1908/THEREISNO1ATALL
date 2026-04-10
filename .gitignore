@@ -2,34 +2,47 @@
 # Dependencies
 node_modules/
 
-# Build artifacts
+# Build outputs
 dist/
 build/
-target/
+coverage/
+htmlcov/
 
-# Logs
-*.log
-
-# Environment
+# Environment variables
 .env
 .env.local
-*.env.*
+.env.*
 
-# Editors
+# IDE specific
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Python
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Temp files
-*.tmp
-*.swp
+# Logs
+*.log
 
-# OS
+# Temporary files
+*.tmp
+
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Testing
+.mypy_cache/
+.pytest_cache/
+
+# Package manager
+package-lock.json
+yarn.lock
+
+# Vite specific
+.vite/
 ```
