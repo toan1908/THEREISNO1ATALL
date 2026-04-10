@@ -1,0 +1,210 @@
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #00d9ff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #a0a0b0;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.omni-input-wrapper {
+  margin-bottom: 2rem;
+}
+
+.omni-input-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.omni-input-container.dragging {
+  border-color: #00d9ff;
+  background: rgba(0, 217, 255, 0.1);
+}
+
+.omni-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  resize: none;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.omni-input::placeholder {
+  color: #6a6a8a;
+}
+
+.input-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.file-upload-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #a0a0b0;
+  font-size: 0.9rem;
+}
+
+.file-upload-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d9ff;
+  color: #00d9ff;
+}
+
+.file-upload-btn.has-file {
+  border-style: solid;
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.file-label {
+  font-size: 0.85rem;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear-file-btn {
+  background: rgba(255, 100, 100, 0.2);
+  border: none;
+  color: #ff6464;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.clear-file-btn:hover {
+  background: rgba(255, 100, 100, 0.4);
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #00d9ff, #00ff88);
+  border: none;
+  border-radius: 10px;
+  color: #1a1a2e;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+}
+
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hero-examples {
+  margin-top: 2rem;
+}
+
+.examples-label {
+  color: #6a6a8a;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.example-chips {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.example-chips button {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #a0a0b0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.example-chips button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00d9ff;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .input-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .generate-btn {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .example-chips {
+    flex-direction: column;
+  }
+
+  .example-chips button {
+    text-align: center;
+  }
+}
