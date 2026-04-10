@@ -12,7 +12,7 @@ function App() {
     setLearningGoal(goal);
     setUploadedFile(file);
     setAppState('loading');
-    
+
     // Simulate AI generation time
     setTimeout(() => {
       setAppState('dashboard');
@@ -30,13 +30,13 @@ function App() {
       {appState === 'hero' && (
         <Hero onGenerate={handleGenerate} />
       )}
-      
+
       {appState === 'loading' && (
         <LoadingScreen learningGoal={learningGoal} />
       )}
-      
+
       {appState === 'dashboard' && (
-        <Dashboard 
+        <Dashboard
           learningGoal={learningGoal}
           file={uploadedFile}
           onBack={handleBack}
