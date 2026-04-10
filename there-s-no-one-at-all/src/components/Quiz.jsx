@@ -15,17 +15,17 @@ function Quiz({ questions, onComplete }) {
   const handleSubmitAnswer = () => {
     if (selectedAnswer !== null) {
       const isCorrect = selectedAnswer === questions[currentQuestion].correct;
-      
+
       if (isCorrect) {
         setScore(score + 1);
       }
-      
-      setAnswers([...answers, { 
-        question: currentQuestion, 
-        selected: selectedAnswer, 
-        correct: isCorrect 
+
+      setAnswers([...answers, {
+        question: currentQuestion,
+        selected: selectedAnswer,
+        correct: isCorrect
       }]);
-      
+
       setShowResult(true);
     }
   };
@@ -61,8 +61,8 @@ function Quiz({ questions, onComplete }) {
         <div className="quiz-progress">
           <span>Question {currentQuestion + 1} of {questions.length}</span>
           <div className="progress-bar">
-            <div 
-              className="progress-fill" 
+            <div
+              className="progress-fill"
               style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
             />
           </div>
@@ -72,7 +72,7 @@ function Quiz({ questions, onComplete }) {
       {!showResult ? (
         <div className="quiz-content">
           <p className="question-text">{question.question}</p>
-          
+
           <div className="answers-list">
             {question.options.map((option, index) => (
               <button
@@ -99,7 +99,7 @@ function Quiz({ questions, onComplete }) {
           <div className={`result-icon ${selectedAnswer === question.correct ? 'correct' : 'incorrect'}`}>
             {selectedAnswer === question.correct ? '✓' : '✗'}
           </div>
-          
+
           <p className="result-text">
             {selectedAnswer === question.correct ? (
               <span className="correct-text">🎉 Correct!</span>
