@@ -4,27 +4,32 @@ node_modules/
 
 # Build artifacts
 dist/
-
-# Environment variables
-.env
-.env.local
-.env.*
-
-# IDE and editor files
-.vscode/
-.idea/
+build/
+target/
 
 # Logs
 *.log
 
-# Temporary files
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temp files
 *.tmp
 *.swp
 
-# Package lock files
-package-lock.json
-
-# OS generated files
+# OS
 .DS_Store
 Thumbs.db
 ```
