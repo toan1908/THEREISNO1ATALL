@@ -158,7 +158,7 @@ function Dashboard({ learningGoal, file, onBack }) {
     if (!completedModules.includes(currentModule.id)) {
       setCompletedModules([...completedModules, currentModule.id]);
       setXp(xp + 100);
-      
+
       // Unlock next module
       if (currentModuleIndex < curriculum.modules.length - 1) {
         const nextModule = curriculum.modules[currentModuleIndex + 1];
@@ -177,7 +177,7 @@ function Dashboard({ learningGoal, file, onBack }) {
     if (chatInput.trim()) {
       const userMessage = { role: 'user', content: chatInput };
       setChatMessages([...chatMessages, userMessage]);
-      
+
       // Simulate AI response
       setTimeout(() => {
         const aiResponse = {
@@ -186,7 +186,7 @@ function Dashboard({ learningGoal, file, onBack }) {
         };
         setChatMessages(prev => [...prev, aiResponse]);
       }, 500);
-      
+
       setChatInput('');
     }
   };
@@ -199,7 +199,7 @@ function Dashboard({ learningGoal, file, onBack }) {
       `Excellent curiosity! Let me explain this in the context of ${learningGoal}.`,
       `That's a thoughtful question! Here's how this connects to what you're learning.`
     ];
-    return responses[Math.floor(Math.random() * responses.length)] + 
+    return responses[Math.floor(Math.random() * responses.length)] +
            `\n\n**Key Point**: Remember to review the lesson material above for more details. Practice is essential for mastery! 💪`;
   }
 
@@ -236,7 +236,7 @@ function Dashboard({ learningGoal, file, onBack }) {
             <BookOpen size={20} />
             <h2>Learning Path</h2>
           </div>
-          
+
           <div className="modules-timeline">
             {curriculum.modules.map((module, index) => (
               <div
@@ -268,20 +268,20 @@ function Dashboard({ learningGoal, file, onBack }) {
             {currentLesson && (
               <>
                 <h2 className="lesson-title">{currentLesson.title}</h2>
-                <div 
+                <div
                   className="markdown-body"
                   dangerouslySetInnerHTML={{ __html: marked.parse(currentLesson.content) }}
                 />
-                
+
                 {!showQuiz ? (
                   <div className="lesson-actions">
-                    <button 
+                    <button
                       className="start-quiz-btn"
                       onClick={() => setShowQuiz(true)}
                     >
                       📝 Take Quiz
                     </button>
-                    <button 
+                    <button
                       className={`complete-btn ${completedModules.includes(currentModule.id) ? 'completed' : ''}`}
                       onClick={handleCompleteLesson}
                       disabled={completedModules.includes(currentModule.id)}
@@ -294,8 +294,8 @@ function Dashboard({ learningGoal, file, onBack }) {
                     </button>
                   </div>
                 ) : (
-                  <Quiz 
-                    questions={currentLesson.quiz} 
+                  <Quiz
+                    questions={currentLesson.quiz}
                     onComplete={handleQuizComplete}
                   />
                 )}
@@ -310,7 +310,7 @@ function Dashboard({ learningGoal, file, onBack }) {
             <MessageSquare size={20} />
             <h2>AI Companion</h2>
           </div>
-          
+
           <div className="chat-container">
             <div className="chat-messages">
               {chatMessages.map((message, index) => (
@@ -322,7 +322,7 @@ function Dashboard({ learningGoal, file, onBack }) {
                     {message.role === 'assistant' ? '🤖' : '👤'}
                   </div>
                   <div className="message-content">
-                    <div 
+                    <div
                       className="message-text"
                       dangerouslySetInnerHTML={{ __html: marked.parse(message.content) }}
                     />
@@ -330,7 +330,7 @@ function Dashboard({ learningGoal, file, onBack }) {
                 </div>
               ))}
             </div>
-            
+
             <div className="chat-input-area">
               <textarea
                 className="chat-input"
@@ -340,7 +340,7 @@ function Dashboard({ learningGoal, file, onBack }) {
                 onKeyPress={handleKeyPress}
                 rows={3}
               />
-              <button 
+              <button
                 className="send-message-btn"
                 onClick={handleSendMessage}
                 disabled={!chatInput.trim()}
