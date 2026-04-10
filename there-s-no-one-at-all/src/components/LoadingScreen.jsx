@@ -11,15 +11,15 @@ function LoadingScreen({ learningGoal }) {
           <div className="brain-ring ring-2"></div>
           <div className="brain-ring ring-3"></div>
         </div>
-        
+
         <h2 className="loading-title">
           Architecting Your Learning Path...
         </h2>
-        
+
         <p className="loading-subtitle">
           Analyzing: "{learningGoal}"
         </p>
-        
+
         <div className="loading-steps">
           <div className="loading-step completed">
             <span className="step-icon">✓</span>
